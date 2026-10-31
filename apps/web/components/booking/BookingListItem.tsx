@@ -1069,8 +1069,7 @@ const DisplayAttendees = ({
   eventTypeHosts?: Array<{ user: { email: string } | null }> | null;
 }) => {
   const { t } = useLocale();
-  attendees.sort((a, b) => a.id - b.id);
-
+const sortedAttendees = [...attendees].sort((a, b) => a.id - b.id);
   return (
     <div className="text-emphasis text-sm" onClick={(e) => e.stopPropagation()}>
       {user && (
